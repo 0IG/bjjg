@@ -1,0 +1,15 @@
+{
+  "name": "bjjg",
+  "version": "1.0.0",
+  "description": "fullstack bjj guide",
+  "main": "back-end/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bjj",
+    "guide"
+  ],
+  "author": "Isaac Gonzalez",
+  "license": "ISC"
+}
