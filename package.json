@@ -4,6 +4,7 @@
   "description": "fullstack bjj guide",
   "main": "back-end/server.js",
   "scripts": {
+    "start": "cd back-end && npm install && node server.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -11,5 +12,13 @@
     "guide"
   ],
   "author": "Isaac Gonzalez",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0IG/bjjg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0IG/bjjg/issues"
+  },
+  "homepage": "https://github.com/0IG/bjjg#readme"
 }
