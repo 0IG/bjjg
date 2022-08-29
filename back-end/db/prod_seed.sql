@@ -1,4 +1,4 @@
-\c ; -- db pg connect 
+\c dde0bonvglg96c; 
 
 INSERT INTO recs (name, price, rating, is_user_submitted, is_expensive, image, link) VALUES
 ('ELITE - Mens Core White BJJ Gi', 115, 4.5 , false, false, 'https://cdn.shopify.com/s/files/1/0030/3742/9849/products/Men_sCoreWhiteBrazilianJiuJitsuBJJGi_2_1200x.jpg?v=1660854126', 'https://www.elitesports.com/products/elite-sports-ultra-light-preshrunk-white-adult-brazilian-jiu-jitsu-bjj-gi-with-free-white-belt'),
