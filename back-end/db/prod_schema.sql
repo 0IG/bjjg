@@ -1,5 +1,5 @@
 -- CONNECTING TO THE DATABASE
-\c dde0bonvglg96c;
+\c daevd1vmg0g7lm;
 
 DROP DATABASE IF EXISTS recs;
 
