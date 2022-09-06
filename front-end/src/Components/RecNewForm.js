@@ -32,7 +32,7 @@ const RecNewForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateRec(recommendation);
+    addNewRec(recommendation);
   };
 
   return (
@@ -84,3 +84,5 @@ const RecNewForm = () => {
     </div>
   );
 };
+
+export default RecNewForm;
