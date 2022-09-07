@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import Show from "./Pages/Show";
 import Edit from "./Pages/Edit";
 import Index from "./Pages/Index";
+import FourOFour from "./Pages/FourOFour";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route exact path="/recommended/:id" element={<Show />} />
             <Route path="/recommended/:id/edit" element={<Edit />} />
             <Route path="/recommended" element={<Index />} />
+            <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
       </Router>

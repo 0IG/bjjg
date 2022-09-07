@@ -12,6 +12,7 @@ const confirmPrice = (cost) => {
   } else if (name.toLowerCase().includes("gi") && price >= 140) {
     return true;
   }
+  return false;
 };
 
 module.exports = confirmPrice;
