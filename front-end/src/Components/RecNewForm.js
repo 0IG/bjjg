@@ -11,7 +11,7 @@ const RecNewForm = () => {
     name: "",
     price: "",
     rating: "",
-    is_user_submitted: "",
+    is_user_submitted: false,
     is_expensive: "",
     image: "",
     link: "",
