@@ -7,6 +7,8 @@ export default function NavBar() {
         <Link to="/">Home</Link>
         <br />
         <Link to="/recommended">Recommened</Link>
+        <br />
+        <Link to="/recommended/new">New</Link>
       </h1>
       {/* <div className="navbar-icons">
         <Link to='/'>
