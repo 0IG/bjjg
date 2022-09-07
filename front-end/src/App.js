@@ -17,7 +17,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recommended/new" element={<New />} />
-            <Route exact path="/recommendation/:id" element={<Show />} />
+            <Route exact path="/recommended/:id" element={<Show />} />
             <Route path="/recommended/:id/edit" element={<Edit />} />
             <Route path="/recommended" element={<Index />} />
           </Routes>

@@ -14,7 +14,7 @@ const Recommendation = ({ recommendation }) => {
         />
       </div>
       <button>
-        <Link to={`/recommendation/${recommendation.id}`}>
+        <Link to={`/recommended/${recommendation.id}`}>
           Recommendation Price Details
         </Link>
       </button>

@@ -3,7 +3,7 @@ const Home = () => {
     <div className="home">
       <h1 className="home-welcome">Welcome to the BJJ Guide</h1>
       <h3 className="home-welcome">
-        For everything to help beginners transition into the sport!
+        Everything a beginner will need in the sport in one place!
       </h3>
     </div>
   );

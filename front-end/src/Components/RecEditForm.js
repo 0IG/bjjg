@@ -7,12 +7,12 @@ const API = process.env.REACT_APP_API_URL;
 export default function RecEditForm() {
   let navigate = useNavigate();
   const { id } = useParams();
-  const [recommendation, setRec] = useState({
+  const [recommendation, setRecommendation] = useState({
     name: "",
-    price: "",
-    rating: "",
-    is_user_submitted: "",
-    is_expensive: "",
+    price: 0,
+    rating: 0,
+    is_user_submitted: false,
+    is_expensive: false,
     image: "",
     link: "",
   });
@@ -27,12 +27,15 @@ export default function RecEditForm() {
   useEffect(() => {
     axios
       .get(`${API}/recommended/${id}`)
-      .then((response) => setRec(response.data))
+      .then((response) => setRecommendation(response.data.payload))
       .catch((error) => console.error(error));
   }, [id, navigate]);
 
   const handleTextChange = (event) => {
-    setRec({ ...recommendation, [event.target.id]: event.target.value });
+    setRecommendation({
+      ...recommendation,
+      [event.target.id]: event.target.value,
+    });
   };
 
   const handleSubmit = (event) => {
@@ -40,10 +43,16 @@ export default function RecEditForm() {
     updateRec(recommendation);
   };
 
+  const handleCheckboxChange = (event) => {
+    setRecommendation({
+      ...recommendation,
+      [event.target.id]: !recommendation[event.target.id],
+    });
+  };
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Gear's Name:</label>
+        <label htmlFor="image">Gear's Image:</label>
         <input
           id="image"
           type="text"
@@ -78,6 +87,23 @@ export default function RecEditForm() {
           onChange={handleTextChange}
           placeholder="link..."
           required
+        />
+        <label htmlFor="name">Gear's Name:</label>
+        <input
+          id="name"
+          type="text"
+          value={recommendation.name}
+          onChange={handleTextChange}
+          placeholder="name..."
+          required
+        />
+        <label htmlFor="is_user_submitted">Gear's Submit:</label>
+        <input
+          id="is_user_submitted"
+          type="checkbox"
+          value={recommendation.is_user_submitted}
+          onChange={handleCheckboxChange}
+          placeholder="user..."
         />
         <div>
           <input type="submit" />

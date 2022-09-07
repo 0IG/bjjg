@@ -48,7 +48,7 @@ recommended.get("/:id", async (req, res) => {
 });
 
 //CREATE ROUTE USING POST METHOD TO CREATE A NEW RECOMMENDATION
-recommended.post("/", changeImageUrl, capitalizeRecName, async (req, res) => {
+recommended.post("/", async (req, res) => {
   const { body } = req;
   const aNewRecommendation = body;
   body.is_expensive = confirmPrice(body);
@@ -64,18 +64,15 @@ recommended.post("/", changeImageUrl, capitalizeRecName, async (req, res) => {
 });
 
 //UPDATE ROUTE USING PUT METHOD
-recommended.put("/:id", changeImageUrl, capitalizeRecName, async (req, res) => {
-  const { id } = req.params;
-  const { body } = req;
-  body.is_expensive = confirmPrice(body);
-  const updatedRecommendation = await updateRecommendation(id, body);
-  if (updatedRecommendation.id) {
+recommended.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { body } = req;
+    body.is_expensive = confirmPrice(body);
+    const updatedRecommendation = await updateRecommendation(id, body);
     res.status(200).json({ success: true, payload: updatedRecommendation });
-  } else {
-    res.status(404).json({
-      success: false,
-      payload: `A recommendation with id number ${id} can not be updated! Please try again.`,
-    });
+  } catch (error) {
+    console.log(error);
   }
 });
 

@@ -19,8 +19,8 @@ const RecommendationDetails = () => {
 
   const handleDelete = () => {
     axios
-      .delete(`${API}/recommendation/${id}`)
-      .then(() => navigate("/recommendation"))
+      .delete(`${API}/recommended/${id}`)
+      .then(() => navigate("/recommended"))
       .catch((error) => console.log(error));
   };
 
@@ -58,11 +58,11 @@ const RecommendationDetails = () => {
       </div>
 
       <div>
-        <Link to="/recommendation">
+        <Link to="/recommended">
           <button>Go Back</button>
         </Link>
 
-        <Link to={`/recommendation/${id}/edit`}>
+        <Link to={`/recommended/${id}/edit`}>
           <button>Edit</button>
         </Link>
 

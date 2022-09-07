@@ -27,13 +27,15 @@ const getOneRecommendation = async (id) => {
 const createRecommendation = async (recommendation) => {
   try {
     const newRecommendation = await db.one(
-      "INSERT INTO recs (name, price, rating, is_user_submitted, is_expensive, image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
+      "INSERT INTO recs (name, price, rating, is_user_submitted, is_expensive, image, link) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [
         recommendation.name,
         recommendation.price,
         recommendation.rating,
         recommendation.is_user_submitted,
         recommendation.is_expensive,
+        recommendation.image,
+        recommendation.link,
       ]
     );
     return newRecommendation;
@@ -46,13 +48,15 @@ const createRecommendation = async (recommendation) => {
 const updateRecommendation = async (id, recommendation) => {
   try {
     const updatedRecommendation = await db.one(
-      "UPDATE recs SET name = $1, price = $2, rating = $3, is_user_submitted = $4, is_expensive = $5, image = $6 WHERE id = $7 RETURNING *",
+      "UPDATE recs SET name = $1, price = $2, rating = $3, is_user_submitted = $4, is_expensive = $5, image = $6, link = $7 WHERE id = $8 RETURNING *",
       [
         recommendation.name,
         recommendation.price,
         recommendation.rating,
         recommendation.is_user_submitted,
         recommendation.is_expensive,
+        recommendation.image,
+        recommendation.link,
         id,
       ]
     );

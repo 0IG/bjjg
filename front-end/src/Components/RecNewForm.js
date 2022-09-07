@@ -7,7 +7,7 @@ const API = process.env.REACT_APP_API_URL;
 const RecNewForm = () => {
   const navigate = useNavigate();
 
-  const [recommendation, setRec] = useState({
+  const [recommendation, setRecommendation] = useState({
     name: "",
     price: "",
     rating: "",
@@ -27,7 +27,10 @@ const RecNewForm = () => {
   };
 
   const handleTextChange = (event) => {
-    setRec({ ...recommendation, [event.target.id]: event.target.value });
+    setRecommendation({
+      ...recommendation,
+      [event.target.id]: event.target.value,
+    });
   };
 
   const handleSubmit = (event) => {
@@ -35,14 +38,20 @@ const RecNewForm = () => {
     addNewRec(recommendation);
   };
 
+  const handleCheckboxChange = (event) => {
+    setRecommendation({
+      ...recommendation,
+      [event.target.id]: !recommendation[event.target.id],
+    });
+  };
+
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Gear's Name:</label>
+        <label htmlFor="image">Gear's Image:</label>
         <input
           id="image"
           type="text"
-          value={recommendation.image}
           onChange={handleTextChange}
           placeholder="https://..."
           required
@@ -51,7 +60,6 @@ const RecNewForm = () => {
         <input
           id="price"
           type="number"
-          value={recommendation.price}
           onChange={handleTextChange}
           placeholder="price..."
           required
@@ -60,7 +68,6 @@ const RecNewForm = () => {
         <input
           id="rating"
           type="number"
-          value={recommendation.rating}
           onChange={handleTextChange}
           placeholder="rating..."
           required
@@ -69,10 +76,24 @@ const RecNewForm = () => {
         <input
           id="link"
           type="text"
-          value={recommendation.link}
           onChange={handleTextChange}
           placeholder="link..."
           required
+        />
+        <label htmlFor="name">Gear's Name:</label>
+        <input
+          id="name"
+          type="text"
+          onChange={handleTextChange}
+          placeholder="name..."
+          required
+        />
+        <label htmlFor="is_user_submitted">Gear's Submit:</label>
+        <input
+          id="is_user_submitted"
+          type="checkbox"
+          onChange={handleCheckboxChange}
+          placeholder="user..."
         />
         <div>
           <input type="submit" />
