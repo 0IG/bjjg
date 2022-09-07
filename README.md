@@ -31,7 +31,7 @@ It is recommended that you open a new terminal tab that will be dedicated to run
 PORT=3333
 PG_HOST=localhost
 PG_PORT=5432
-PG_DATABASE=bjjg;
+PG_DATABASE=bjjg
 
 
 - npm install - install npm packages listed in package.json
