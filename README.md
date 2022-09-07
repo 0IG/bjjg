@@ -31,7 +31,7 @@ It is recommended that you open a new terminal tab that will be dedicated to run
 PORT=3333
 PG_HOST=localhost
 PG_PORT=5432
-PG_DATABASE=food_log
+PG_DATABASE=bjjg;
 
 
 - npm install - install npm packages listed in package.json
@@ -55,11 +55,4 @@ REACT_APP_API_URL=http://localhost:3333
 - npm install - install npm packages listed in package.json
 - npm start - make sure your React app can start
 
-## Inspiration
-The inspiration for BetterHealth came because I wanted to keep track of my weight, the foods I would have eaten, and the number of calories I would have consumed throughout the day. Being able to track my foods, weight, and calories all on BetterHealth makes it much easier for me to stay organized. By knowing the foods I eat and how many calories I consume, I'm more likely to reach my fitness goals!
-Better Health - Weight Tracker
-Web site created using create-react-app
-Trello
-Organize anything, together. Trello is a collaboration tool that organizes your projects into boards. In one glance, know what's being worked on, who's working on what, and where something is in a process.
-miro.com
-Entity Relationship Diagram
+
