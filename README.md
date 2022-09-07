@@ -38,7 +38,7 @@ PG_DATABASE=bjjg
 - npm run db:init - initialize a new database and create tables
 - npm run db:seed - seed the table(s) with some data
 - nodemon - confirm that this is running on port 3333
-- Visit http://localhost:3333/myfoods and make sure you see some food data in the form of an array of objects
+- Visit http://localhost:3333/recommended and make sure you see some recommended gear
 
 ### Frontend Setup
 
